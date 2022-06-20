@@ -20,6 +20,6 @@ export default function HousingAlarmChart() {
   <GraphItem data={
       jQuery.map(datas, function(n, i) {
           return n.count;
-  })} type={'bar'} index='y' labels={['Не является аварийным', 'Аварийное жилое имущество']} 
+  })} type={'bar'} index='y' labels={['Не являются аварийными, но требуют ремонта', 'Аварийное жилое имущество']}
   title={"Распределение количества аварийных домов"} />);
 }

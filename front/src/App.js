@@ -1,4 +1,5 @@
 import React from 'react'
+import { ToastContainer } from 'react-toastify';
 import Body from './Body'
 
 //Отсюда начинается рендер страницы
@@ -17,13 +18,24 @@ class App extends React.Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    <h1 className="title">Сайт статистики аварийного жилья</h1>
-                    <nav>
-          <span className="header" id="housing" onClick={
-              () => {
-                  this.setState({states: {demography: false, housing: true, communications: false, accidents: false}})
-              }}>Жилье</span>
-                        <span className="header" id="accidents" onClick={
+                    <h1 className="title">Визуализация городского развития</h1>
+                    <nav style={{display: "flex"}}>
+                        <div className="header" id="housing" onClick={
+                            () => {
+                                this.setState({
+                                    states: {
+                                        demography: false,
+                                        housing: true,
+                                        communications: false,
+                                        accidents: false
+                                    }
+                                })
+                            }}>
+                            <span>
+                            Жилищный фонд
+                            </span>
+                        </div>
+                        <div className="header" id="accidents" onClick={
                             () => {
                                 this.setState({
                                     states: {
@@ -33,10 +45,15 @@ class App extends React.Component {
                                         accidents: true
                                     }
                                 })
-                            }}>Аварии</span>
+                            }}>
+                            <span>
+                            ДТП
+                            </span>
+                        </div>
                     </nav>
                 </header>
                 <Body tabStates={this.state.states}/>
+                <ToastContainer/>
             </div>
         );
     }

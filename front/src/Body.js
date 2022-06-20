@@ -9,7 +9,6 @@ import { MainMap } from './RootItems/MainMap'
 export default function Body(props) {
         return(
         <div className="bodyContent">
-           <MainMap />
             {
                 props.tabStates.demography && // Вкладка с демографией
                 <DemographyStats active={props.tabStates.demography}/> 

@@ -10,7 +10,7 @@ export default function AccidentTopDriverViolations() {
     //Запрос к API
     useEffect(() => {
         fetch("http://localhost:8000/api/v1/dtp/stat/driver/violations/top?count=5")
-        .then(responce => responce.json())
+        .then(response => response.json())
         .then(result =>setData(result))
     }, []);
 

@@ -19,17 +19,17 @@ export default function HousingNumberTable() {
             archData.length > 0 &&  
             <TableNumberStats numberData={[
             {
-                descr: 'Общее количество зданий',
+                descr: 'Общее количество зданий, требующих ремонта',
                 num: archData[0].count_all_house
             },
             {
-                descr: 'Количество архитектурных зданий',
+                descr: 'Количество зданий архитектурного наследия',
                 num: archData[0].count_architectural_house
             },
             {
                 descr: 'Каждое',
                 num: Math.floor(archData[0].count_all_house/archData[0].count_architectural_house),
-                postfix: 'здание- архитектурное'
+                postfix: 'здание является архитектурным наследием'
             }]}/>
         }
         </div>
